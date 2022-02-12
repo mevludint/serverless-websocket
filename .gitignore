@@ -1,0 +1,7 @@
+.env.sandbox
+.env.staging
+.env
+serverless.yml
+.idea
+node_modules
+.serverless

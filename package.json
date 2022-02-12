@@ -1,0 +1,24 @@
+{
+  "name": "serverless-websocket",
+  "version": "1.0.0",
+  "description": "Serverless Framework - AWS Lambda Events - Websocket",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "BUILD_YML_IN_PROGRESS=true node -r dotenv/config buildYml.js && SLS_DEBUG=* sls deploy --config serverless.yml"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.607.0",
+    "dotenv": "^10.0.0",
+    "redis": "^3.1.2",
+    "@hapi/joi": "^16.1.8",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "env-cmd": "^10.1.0",
+    "prettier": "^1.19.1",
+    "serverless-dotenv-plugin": "^2.1.1"
+  }
+}
