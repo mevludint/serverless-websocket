@@ -2,7 +2,9 @@
   "provider": {
     "name": "aws",
     "runtime": "nodejs12.x",
-    "lambdaHashingVersion": "20201221"
+    "lambdaHashingVersion": "20201221",
+    "websocketsApiRouteSelectionExpression":"$request.body.action"
+
   },
   "functions": {
     "connectionHandler": {

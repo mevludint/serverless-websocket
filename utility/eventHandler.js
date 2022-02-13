@@ -1,6 +1,22 @@
+require("dotenv").config();
+
 const AWS = require("aws-sdk");
 const { redisSet, redisGet } = require("./redis");
-const { API_URL } = process.env;
+const {
+  API_URL,
+  AWS_LAMBDA_ACCESS_KEY,
+  AWS_LAMBDA_SECRET_KEY,
+  AWS_LAMBDA_REGION
+} = process.env;
+
+
+AWS.config.update({
+  accessKeyId: AWS_LAMBDA_ACCESS_KEY,
+  secretAccessKey: AWS_LAMBDA_SECRET_KEY,
+  region: AWS_LAMBDA_REGION,
+  signatureVersion: "v4"
+});
+
 
 const client = new AWS.ApiGatewayManagementApi({ endpoint: API_URL });
 

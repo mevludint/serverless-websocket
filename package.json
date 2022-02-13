@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.607.0",
+    "aws-sdk": "^2.1073.0",
     "dotenv": "^10.0.0",
     "redis": "^3.1.2",
     "@hapi/joi": "^16.1.8",

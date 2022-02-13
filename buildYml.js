@@ -45,8 +45,11 @@ const { EventHandler } = require("./utility/eventHandler");
     if (AWS_LAMBDA_REGION) initialYml.provider.region = AWS_LAMBDA_REGION;
     if (AWS_LAMBDA_PROFILE) initialYml.provider.profile = AWS_LAMBDA_PROFILE;
     if (LAMBDA_FUNCTION_NAME) initialYml.service = LAMBDA_FUNCTION_NAME;
-    if (API_GATEWAY_FUNCTION_NAME)
+
+    if (API_GATEWAY_FUNCTION_NAME) {
+      initialYml.provider.websocketsApiName = API_GATEWAY_FUNCTION_NAME;
       initialYml.functions.connectionHandler.name = API_GATEWAY_FUNCTION_NAME;
+    }
 
     for (let websocketEvent of events) {
       initialYml.functions.connectionHandler.events.push({
